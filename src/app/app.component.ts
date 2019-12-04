@@ -17,6 +17,16 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Login',
+      url: '/login',
+      icon: 'cog'
+    },
+    {
+      title: 'Register',
+      url: '/register',
+      icon: 'cog'
+    },
+    {
       title: 'List',
       url: '/list',
       icon: 'list'

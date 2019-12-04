@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="stacked">First Name</ion-label>
+    <ion-input type="text" required="true" [(ngModel)]="registerForm.firstName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Last Name</ion-label>
+    <ion-input type="text" required="true" [(ngModel)]="registerForm.lastName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Username</ion-label>
+    <ion-input type="text" required="true" [(ngModel)]="registerForm.username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input type="email" required="true" [(ngModel)]="registerForm.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked" required="true">Password</ion-label>
+    <ion-input type="password" required="true" [(ngModel)]="registerForm.password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="createAccount()">Create an Account</ion-button>
+
+</ion-content>

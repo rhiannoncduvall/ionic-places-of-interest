@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item>
+    <ion-label position="stacked">Username</ion-label>
+    <ion-input type="text" required="true" [(ngModel)]="loginForm.username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+    <ion-input type="password" required="true" [(ngModel)]="loginForm.password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="userLogin()">Log in</ion-button>
+
+</ion-content>
