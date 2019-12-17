@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginForm } from '../user.service'
 
-export interface LoginForm {
-  username: string;
-  password: string;
-}
 
 @Component({
   selector: 'app-login',

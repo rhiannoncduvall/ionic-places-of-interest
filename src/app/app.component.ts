@@ -43,8 +43,10 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      const isDesktop  = this.platform.is('desktop')
+      console.log("mode", isDesktop)
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      this.splashScreen.hide()
     });
   }
 }

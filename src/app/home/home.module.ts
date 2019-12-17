@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-
 import { HomePage } from './home.page';
+import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
+
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
+  providers: [TextToSpeech],
   declarations: [HomePage]
 })
 export class HomePageModule {}

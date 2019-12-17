@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface RegisterForm {
-  username: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-}
+import { RegisterForm } from '../user.service'
 
 @Component({
   selector: 'app-register',
