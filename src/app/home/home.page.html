@@ -13,12 +13,31 @@
   <ion-card class="welcome-card">
     <ion-card-header>
       <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title>
+      <ion-card-title>Text to Speech</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+        <ion-label position="floating">Text area</ion-label>
+        <ion-textarea [(ngModel)]="ttsOptions.text" placeholder="Enter text here..."></ion-textarea>
       </ion-item>
+      <ion-item>
+          <ion-label>Speed</ion-label>
+        <ion-range min="1" max="2" step="0.25" snaps="true" ticks="true" [(ngModel)]="ttsOptions.rate">
+          <!-- <ion-label slot="start">1</ion-label>
+          <ion-label slot="end">2</ion-label> -->
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Language</ion-label>
+        <ion-select [(ngModel)]="ttsOptions.locale" value="en" okText="Okay" cancelText="Dismiss" interface="popover">
+          <ion-select-option value="en">English</ion-select-option>
+          <ion-select-option value="fr">French</ion-select-option>
+          <ion-select-option value="es">Spanish</ion-select-option>
+          <ion-select-option value="ru">Russian</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
       <ion-button (click)="speakText()">Speak</ion-button>
       <ion-button (click)="presentToast()">Toast</ion-button>
     </ion-card-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginForm } from '../user.service'
+import { LoginForm } from '../user.service';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -9,7 +10,9 @@ import { LoginForm } from '../user.service'
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+  ) { }
 
   loginForm: LoginForm = {
     username: null,
@@ -20,7 +23,7 @@ export class LoginPage implements OnInit {
   }
 
   userLogin() {
-    console.log("success!")
+    this.userService.getUserLogin(this.loginForm);
   }
 
 }

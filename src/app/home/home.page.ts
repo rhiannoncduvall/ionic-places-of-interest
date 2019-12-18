@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, LOCALE_ID } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
 // import { Geolocation } from '@ionic-native/geolocation/ngx';
@@ -27,10 +27,15 @@ export class HomePage {
     // private geolocation: Geolocation,
     public toast: ToastController, 
     public loadCtrl: LoadingController) {}
-
+  
+  ttsOptions = {
+    text: '',
+    locale: 'en',
+    rate: 1.5,
+  }
 
   speakText() {
-    this.tts.speak('Hello World')
+    this.tts.speak(this.ttsOptions)
       .then(() => console.log('Success'))
       .catch((reason: any) => console.log(reason));
   }
