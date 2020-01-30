@@ -18,7 +18,7 @@ import { AgmCoreModule } from '@agm/core';
     IonicModule,
     MapsPageRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDrevXIYSGrGYcARw9I124tfTBlyFD95Xk'
+      apiKey: ''
     })
   ],
   providers: [Geolocation],
