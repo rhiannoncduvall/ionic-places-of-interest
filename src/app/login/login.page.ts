@@ -22,8 +22,21 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  userLogin() {
-    this.userService.getUserLogin(this.loginForm);
+  onLogin() {
+    this.userService.getLoginDetails(this.loginForm);
+    this.clearLoginForm()
+  }
+
+  onLogout() {
+    this.userService.logout();
+    this.clearLoginForm()
+  }
+
+  clearLoginForm() {
+    this.loginForm = {
+      username: null,
+      password: null,
+    }
   }
 
 }

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Maps</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <agm-map [latitude]='latitude' [longitude]='longitude' [zoom]="18"
+    [mapTypeId]='mapType'>
+  </agm-map>
+
+  <p>
+    latitude: {{latitude}}, longitude: {{longitude}}
+  </p>
+</ion-content>

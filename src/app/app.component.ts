@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -12,9 +11,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'Text to Speech',
       url: '/home',
       icon: 'home'
+    },
+    {
+      title: 'Maps',
+      url: '/maps',
+      icon: 'map'
     },
     {
       title: 'Login',
@@ -43,8 +47,8 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      const isDesktop  = this.platform.is('desktop')
-      console.log("mode", isDesktop)
+      // const isDesktop  = this.platform.is('desktop')
+      // console.log("desktop: ", isDesktop)
       this.statusBar.styleDefault();
       this.splashScreen.hide()
     });

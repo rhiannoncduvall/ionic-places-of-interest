@@ -1,7 +1,6 @@
 import { Component, LOCALE_ID } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
-// import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
 
 interface IOptions {
@@ -24,7 +23,6 @@ export class HomePage {
 
   constructor(
     public tts: TextToSpeech,
-    // private geolocation: Geolocation,
     public toast: ToastController, 
     public loadCtrl: LoadingController) {}
   

@@ -11,6 +11,9 @@ import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    IonicStorageModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     HTTP,

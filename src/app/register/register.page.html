@@ -8,32 +8,60 @@
 </ion-header>
 
 <ion-content>
+  <ion-card *ngIf="this.userService.isLoggedIn === false; else showWelcomeMessage">
+    <ion-card-header>
+      <ion-card-subtitle>Create a new account</ion-card-subtitle>
+      <ion-card-title>Sign up</ion-card-title>
+    </ion-card-header>
 
-  <ion-item>
-    <ion-label position="stacked">First Name</ion-label>
-    <ion-input type="text" required="true" [(ngModel)]="registerForm.firstName"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked">Last Name</ion-label>
-    <ion-input type="text" required="true" [(ngModel)]="registerForm.lastName"></ion-input>
-  </ion-item>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">First Name</ion-label>
+        <ion-input type="text" required="true" [(ngModel)]="registerForm.firstName"></ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked">Username</ion-label>
-    <ion-input type="text" required="true" [(ngModel)]="registerForm.username"></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Last Name</ion-label>
+        <ion-input type="text" required="true" [(ngModel)]="registerForm.lastName"></ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked">Email</ion-label>
-    <ion-input type="email" required="true" [(ngModel)]="registerForm.email"></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input type="text" required="true" [(ngModel)]="registerForm.username"></ion-input>
+      </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked" required="true">Password</ion-label>
-    <ion-input type="password" required="true" [(ngModel)]="registerForm.password"></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="email" required="true" [(ngModel)]="registerForm.email"></ion-input>
+      </ion-item>
 
-  <ion-button expand="block" (click)="createAccount()">Create an Account</ion-button>
+      <ion-item>
+        <ion-label position="stacked" required="true">Password</ion-label>
+        <ion-input type="password" required="true" [(ngModel)]="registerForm.password"></ion-input>
+      </ion-item>
+<br><br>
+      <ion-button expand="block" (click)="createAccount()">Create an Account</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ng-template #showWelcomeMessage>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Your account has been created!</ion-card-subtitle>
+        <ion-card-title>Signed in</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Welcome, {{ this.userService.user.username }}!
+  
+        <br><br>
+  
+        <ion-button (click)="onLogout()">Log Out</ion-button>
+  
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
 
 </ion-content>
